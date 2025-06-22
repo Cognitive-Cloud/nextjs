@@ -1,29 +1,4 @@
-Perfect! I can see your current website is live with a landing page and pricing tiers. Let me give you the **complete full IXL template** without the landing page or pricing sections.
 
-Here's the **complete dashboard code** to replace what you have:
-
-## 📝 **Complete IXL-Style Dashboard Code:**
-
-In your GitHub file editor, replace ALL the content with this complete version:
-
-```javascript
-'use client'
-
-import React, { useState, useEffect, useRef } from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
-import { ChevronDown, ChevronRight, User, Settings, Bell, Search, BookOpen, BarChart3, Award, Calendar, Clock, Target, TrendingUp, Users, Brain, Star, CheckCircle, XCircle, AlertCircle, Play, Pause, SkipForward, Home, MessageSquare, HelpCircle, LogOut, Menu, X, Filter, Download, Share2, Printer, RefreshCw, Eye, Edit, Trash2, Plus, Minus, ArrowLeft, ArrowRight, ArrowUp, ArrowDown, Circle, Square, Triangle, Heart, Bookmark, Flag, Lock, Unlock, Mail, Phone, Globe, MapPin, Camera, Image, Video, Music, Mic, Volume2, VolumeX, Wifi, WifiOff, Battery, BatteryLow, Smartphone, Laptop, Monitor, Tablet, Watch, Headphones, Keyboard, Mouse, Usb, HardDrive, Cpu, Database, Server, Cloud, CloudOff, Zap, Sun, Moon, CloudRain, CloudSnow, Wind, Thermometer, Droplets, Flame, Snowflake, Umbrella, Rainbow, Sunrise, Sunset, Mountain, Flower, Leaf, Bug, Fish, Bird, Cat, Dog, Rabbit, Snail, Turtle, Squirrel } from 'lucide-react';
-
-// Color system based on IXL's design
-const colors = {
-  primary: {
-    turquoise: '#00B8C8',
-    yellow: '#FFD700',
-    green: '#00C851',
-    blue: '#007BFF',
-    purple: '#6F42C1',
     orange: '#FF8C00',
     red: '#DC3545',
     pink: '#E91E63'
