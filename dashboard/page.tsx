@@ -1,4 +1,18 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
+import { ChevronDown, ChevronRight, User, Settings, Bell, Search, BookOpen, BarChart3, Award, Calendar, Clock, Target, TrendingUp, Users, Brain, Star, CheckCircle, XCircle, AlertCircle, Play, Pause, SkipForward, Home, MessageSquare, HelpCircle, LogOut, Menu, X, Filter, Download, Share2, Printer, RefreshCw, Eye, Edit, Trash2, Plus, Minus, ArrowLeft, ArrowRight, ArrowUp, ArrowDown, Circle, Square, Triangle, Heart, Bookmark, Flag, Lock, Unlock, Mail, Phone, Globe, MapPin, Camera, Image, Video, Music, Mic, Volume2, VolumeX, Wifi, WifiOff, Battery, BatteryLow, Smartphone, Laptop, Monitor, Tablet, Watch, Headphones, Keyboard, Mouse, Usb, HardDrive, Cpu, Database, Server, Cloud, CloudOff, Zap, Sun, Moon, CloudRain, CloudSnow, Wind, Thermometer, Droplets, Flame, Snowflake, Umbrella, Rainbow, Sunrise, Sunset, Mountain, Flower, Leaf, Bug, Fish, Bird, Cat, Dog, Rabbit, Snail, Turtle, Squirrel } from 'lucide-react';
 
+// Color system based on IXL's design
+const colors = {
+  primary: {
+    turquoise: '#00B8C8',
+    yellow: '#FFD700',
+    green: '#00C851',
+    blue: '#007BFF',
+    purple: '#6F42C1',
     orange: '#FF8C00',
     red: '#DC3545',
     pink: '#E91E63'
@@ -729,7 +743,32 @@ const CognitiveCloudApp = () => {
  return (
    <div className="min-h-screen bg-gray-50">
      <NavigationHeader
-
+       currentUser={currentUser}
+       onTabChange={setActiveMainTab}
+       activeMainTab={activeMainTab}
+     />
+     
+     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+       {renderContent()}
+     </main>
+     
+     {/* Footer */}
+     <footer className="bg-white border-t border-gray-200 mt-16">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+         <div className="grid md:grid-cols-4 gap-8">
+           <div>
+             <div className="flex items-center space-x-2 mb-4">
+               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
+                 <Brain className="w-5 h-5 text-white" />
+               </div>
+               <span className="text-xl font-bold">
+                 <span className="text-teal-600">Cognitive</span>
+                 <span className="text-yellow-500">Cloud</span>
+               </span>
+             </div>
+             <p className="text-gray-600 text-sm">
+               Personalized learning platform designed to help every student succeed.
+             </p>
            </div>
            <div>
              <h4 className="font-semibold text-gray-900 mb-4">Learning</h4>
