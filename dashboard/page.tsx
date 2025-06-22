@@ -754,32 +754,7 @@ const CognitiveCloudApp = () => {
  return (
    <div className="min-h-screen bg-gray-50">
      <NavigationHeader
-       currentUser={currentUser}
-       onTabChange={setActiveMainTab}
-       activeMainTab={activeMainTab}
-     />
-     
-     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-       {renderContent()}
-     </main>
-     
-     {/* Footer */}
-     <footer className="bg-white border-t border-gray-200 mt-16">
-       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-         <div className="grid md:grid-cols-4 gap-8">
-           <div>
-             <div className="flex items-center space-x-2 mb-4">
-               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-                 <Brain className="w-5 h-5 text-white" />
-               </div>
-               <span className="text-xl font-bold">
-                 <span className="text-teal-600">Cognitive</span>
-                 <span className="text-yellow-500">Cloud</span>
-               </span>
-             </div>
-             <p className="text-gray-600 text-sm">
-               Personalized learning platform designed to help every student succeed.
-             </p>
+
            </div>
            <div>
              <h4 className="font-semibold text-gray-900 mb-4">Learning</h4>
