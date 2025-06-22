@@ -706,3 +706,116 @@ const AnalyticsDashboard = () => {
               <div>
                 <p className="text-green-100 text-sm">Skills Mastered</p>
                 <p className="text-3xl font-bold">127
+
+// Main Application Component
+const CognitiveCloudApp = () => {
+ const [activeMainTab, setActiveMainTab] = useState('learning');
+ const [selectedSubject, setSelectedSubject] = useState('');
+ const [selectedGrade, setSelectedGrade] = useState('');
+ 
+ const currentUser = {
+   name: 'Alex Johnson',
+   role: 'Student',
+   grade: 'Grade 2',
+   avatar: '/api/placeholder/32/32'
+ };
+
+ const renderContent = () => {
+   switch (activeMainTab) {
+     case 'learning':
+       return (
+         <LearningDashboard
+           selectedSubject={selectedSubject}
+           selectedGrade={selectedGrade}
+           onSubjectChange={setSelectedSubject}
+           onGradeChange={setSelectedGrade}
+         />
+       );
+     case 'diagnostic':
+       return <DiagnosticDashboard />;
+     case 'analytics':
+       return <AnalyticsDashboard />;
+     case 'recommendations':
+       return <RecommendationsDashboard />;
+     case 'awards':
+       return <AwardsDashboard />;
+     default:
+       return (
+         <LearningDashboard
+           selectedSubject={selectedSubject}
+           selectedGrade={selectedGrade}
+           onSubjectChange={setSelectedSubject}
+           onGradeChange={setSelectedGrade}
+         />
+       );
+   }
+ };
+
+ return (
+   <div className="min-h-screen bg-gray-50">
+     <NavigationHeader
+       currentUser={currentUser}
+       onTabChange={setActiveMainTab}
+       activeMainTab={activeMainTab}
+     />
+     
+     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+       {renderContent()}
+     </main>
+     
+     {/* Footer */}
+     <footer className="bg-white border-t border-gray-200 mt-16">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+         <div className="grid md:grid-cols-4 gap-8">
+           <div>
+             <div className="flex items-center space-x-2 mb-4">
+               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
+                 <Brain className="w-5 h-5 text-white" />
+               </div>
+               <span className="text-xl font-bold">
+                 <span className="text-teal-600">Cognitive</span>
+                 <span className="text-yellow-500">Cloud</span>
+               </span>
+             </div>
+             <p className="text-gray-600 text-sm">
+               Personalized learning platform designed to help every student succeed.
+             </p>
+           </div>
+           <div>
+             <h4 className="font-semibold text-gray-900 mb-4">Learning</h4>
+             <ul className="space-y-2 text-sm text-gray-600">
+               <li><a href="#" className="hover:text-teal-600">Mathematics</a></li>
+               <li><a href="#" className="hover:text-teal-600">Science</a></li>
+               <li><a href="#" className="hover:text-teal-600">English Language Arts</a></li>
+               <li><a href="#" className="hover:text-teal-600">Social Studies</a></li>
+             </ul>
+           </div>
+           <div>
+             <h4 className="font-semibold text-gray-900 mb-4">Tools</h4>
+             <ul className="space-y-2 text-sm text-gray-600">
+               <li><a href="#" className="hover:text-teal-600">Diagnostic</a></li>
+               <li><a href="#" className="hover:text-teal-600">Analytics</a></li>
+               <li><a href="#" className="hover:text-teal-600">Recommendations</a></li>
+               <li><a href="#" className="hover:text-teal-600">Awards</a></li>
+             </ul>
+           </div>
+           <div>
+             <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
+             <ul className="space-y-2 text-sm text-gray-600">
+               <li><a href="#" className="hover:text-teal-600">Help Center</a></li>
+               <li><a href="#" className="hover:text-teal-600">Contact Us</a></li>
+               <li><a href="#" className="hover:text-teal-600">Privacy Policy</a></li>
+               <li><a href="#" className="hover:text-teal-600">Terms of Service</a></li>
+             </ul>
+           </div>
+         </div>
+         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
+           <p>&copy; 2024 CognitiveCloud. All rights reserved.</p>
+         </div>
+       </div>
+     </footer>
+   </div>
+ );
+};
+
+export default CognitiveCloudApp;
