@@ -138,4 +138,25 @@ const subjects = {
   Science: scienceSkills
 };
 
-export { subjects };
+export default function Home() {
+  return (
+    <div style={{ padding: '2rem' }}>
+      <h1>🧠 MathCraft & Dunn Solutions 24</h1>
+      {Object.entries(subjects).map(([subject, domains]) => (
+        <div key={subject} style={{ marginBottom: '2rem' }}>
+          <h2>{subject}</h2>
+          {Object.entries(domains).map(([domain, skills]) => (
+            <div key={domain}>
+              <h3>{domain}</h3>
+              <ul>
+                {skills.map((skill, idx) => (
+                  <li key={idx}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
