@@ -52,3 +52,23 @@ export default function HomePage() {
     </main>
   );
 }
+export default function Home() {
+  return (
+    <main style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+      <h1 style={{ fontSize: '2rem', color: '#4B0082' }}>🧠 Welcome to CognitiveCloud.ai</h1>
+      <p style={{ fontSize: '1.25rem' }}>Your gateway to MathCraft, Dunn Solutions 24, and interactive science simulations.</p>
+      <ul>
+        {Object.entries(subjects).map(([subject, sections]) => (
+          <li key={subject}>
+            <strong>{subject}</strong>
+            <ul>
+              {Object.entries(sections).map(([section, tools]) => (
+                <li key={section}>{section}: {tools.length} tools</li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
